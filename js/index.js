@@ -12,6 +12,11 @@
  //select
  //dblclick
 
+ //When the page loads, it writes "Happy to see you" to console log
+ window.addEventListener("load", (e) => {
+    console.log("Happy to see you! ");
+  })
+
  //By pressing  a keydown the header will disappear 
 const body = document.querySelector('body');
 const header = document.querySelector('header');
@@ -19,7 +24,6 @@ body.addEventListener("keydown", () => header.style.opacity = "0");
 
 // Add a background color and increase size of nav links if they are clicked 
  let navLinks = document.querySelectorAll(".nav-link");
-
  navLinks.forEach((link, i) => {
      link.addEventListener("click", (e) => {
         e.target.style.backgroundColor = 'pink';
@@ -54,9 +58,13 @@ e.target.style.border = '2px solid pink';
       })
   })
 
-  window.addEventListener("load", (e) => {
-    console.log("Happy to see you! ");
-  })
+//When the mouse moves, the footer changes the background color and text gets underline
+  let pFooter = document.querySelector(".p-footer");
+  pFooter.addEventListener('mousemove', (e) => {
+    e.target.style.textDecoration = 'yellow underline'; 
+    e.target.style.backgroundColor = 'aquamarine';
+ });
+  
 
 
 
