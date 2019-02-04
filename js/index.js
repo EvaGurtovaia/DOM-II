@@ -12,6 +12,11 @@
  //select
  //dblclick
 
+ //By pressing  a keydown the header will disappear 
+const body = document.querySelector('body');
+const header = document.querySelector('header');
+body.addEventListener("keydown", () => header.style.opacity = "0");
+
 // Add a background color and increase size of nav links if they are clicked 
  let navLinks = document.querySelectorAll(".nav-link");
 
@@ -27,6 +32,7 @@ const nav = document.querySelector(".nav");
 nav.addEventListener('click', (e) => {e.preventDefault();
 console.log("No-no-no");}
 );
+
 //Add a background color and increase of logo
 let logoHeading = document.querySelector(".logo-heading");
 logoHeading.addEventListener("dblclick", (e) => {
@@ -34,14 +40,20 @@ logoHeading.addEventListener("dblclick", (e) => {
     e.target.style.transform = "scale(2.5)";
   });
 
+  //Changing the image
   let img = document.querySelector("img");
   img.addEventListener("mouseover", (e) => {
       e.target.setAttribute('src', 'https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/ocean.jpg');
   })
 
+  //Add a boder
  let button = document.querySelectorAll(".btn");
   button.forEach((element, i) => {
       element.addEventListener("focus",(e) => {
 e.target.style.border = '2px solid pink';
       })
   })
+
+
+
+
