@@ -46,12 +46,16 @@ logoHeading.addEventListener("dblclick", (e) => {
       e.target.setAttribute('src', 'https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/ocean.jpg');
   })
 
-  //Add a boder
+  //Adding a boder 
  let button = document.querySelectorAll(".btn");
   button.forEach((element, i) => {
       element.addEventListener("focus",(e) => {
 e.target.style.border = '2px solid pink';
       })
+  })
+
+  window.addEventListener("load", (e) => {
+    console.log("Happy to see you! ");
   })
 
 
