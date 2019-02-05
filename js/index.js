@@ -24,12 +24,13 @@ body.addEventListener("keydown", () => header.style.opacity = "0");
 
 //When resizing background changes the color.
 window.addEventListener('resize', () => {
-    body.style.backgroundColor = 'pink';
-    window.addEventListener('resize', () => {
-        if(body.style.backgroundColor === "pink")
+    if(body.style.backgroundColor === "pink")
        body.style.backgroundColor = "white";
+  else
+       body.style.backgroundColor = "pink";
+     console.log('Bye!');  
     });
-});
+
 
 // Add a background color and increase size of nav links if they are clicked 
  let navLinks = document.querySelectorAll(".nav-link");
@@ -40,7 +41,20 @@ window.addEventListener('resize', () => {
       })
  })
 
-// Stoping the navigation from items from refreshing the page by using 
+ //
+ let containerHomeP = document.querySelector(".container.home p");
+ containerHomeP.addEventListener("click", (e) => {
+     e.stopPropagation()
+ e.currentTarget.style.backgroundColor = 'pink';
+ })
+//
+let containerHome = document.querySelector(".container.home");
+containerHome.addEventListener("click", (e) => {
+ e.currentTarget.style.backgroundColor = 'pink';
+})
+
+
+//Stoping the navigation from items from refreshing the page by using 
 const nav = document.querySelector(".nav");
 nav.addEventListener('click', (e) => {e.preventDefault();
 console.log("No-no-no");}
@@ -48,7 +62,7 @@ console.log("No-no-no");}
 
 //Add a background color and increase of logo
 let logoHeading = document.querySelector(".logo-heading");
-logoHeading.addEventListener("dblclick", (e) => {
+logoHeading.addEventListener("click", (e) => {
     e.target.style.backgroundColor = 'aquamarine';
     e.target.style.transform = "scale(2.5)";
   });
@@ -63,7 +77,6 @@ logoHeading.addEventListener("dblclick", (e) => {
   const imgDest = document.querySelector(".destination-img");
   imgDest.addEventListener("dragstart", (e) => {
       e.target.style.transform = "rotate(180deg)";
-      e.target.style.backgroundColor = 'orange';
   });
   
   const imgFun = document.querySelector('.fun-img');
@@ -87,5 +100,5 @@ e.target.style.border = '2px solid pink';
     e.target.style.backgroundColor = 'aquamarine';
  });
   
- //anything.style.transform = “rotate(90deg)”;
+ 
 
