@@ -22,6 +22,15 @@ const body = document.querySelector('body');
 const header = document.querySelector('header');
 body.addEventListener("keydown", () => header.style.opacity = "0");
 
+//When resizing background changes the color.
+window.addEventListener('resize', () => {
+    body.style.backgroundColor = 'pink';
+    window.addEventListener('resize', () => {
+        if(body.style.backgroundColor === "pink")
+       body.style.backgroundColor = "white";
+    });
+});
+
 // Add a background color and increase size of nav links if they are clicked 
  let navLinks = document.querySelectorAll(".nav-link");
  navLinks.forEach((link, i) => {
@@ -50,6 +59,14 @@ logoHeading.addEventListener("dblclick", (e) => {
       e.target.setAttribute('src', 'https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/ocean.jpg');
   })
 
+  
+let oneMoreImg = document.querySelector(".content-destination img");
+oneMoreImg.addEventListener("mouseover", (e) => {
+    e.target.style.height = "20%";})
+    oneMoreImg.addEventListener("mouseleave", (e) => {
+        e.target.style.height = "auto";
+    });
+
   //Adding a boder 
  let button = document.querySelectorAll(".btn");
   button.forEach((element, i) => {
@@ -65,7 +82,5 @@ e.target.style.border = '2px solid pink';
     e.target.style.backgroundColor = 'aquamarine';
  });
   
-
-
 
 
