@@ -59,13 +59,18 @@ logoHeading.addEventListener("dblclick", (e) => {
       e.target.setAttribute('src', 'https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/ocean.jpg');
   })
 
+//anything.style.transform = “rotate(90deg)”;
+  const imgDest = document.querySelector(".destination-img");
+  imgDest.addEventListener("dragstart", (e) => {
+      e.target.style.transform = "rotate(180deg)";
+      e.target.style.backgroundColor = 'orange';
+  });
   
-let oneMoreImg = document.querySelector(".content-destination img");
-oneMoreImg.addEventListener("mouseover", (e) => {
-    e.target.style.height = "20%";})
-    oneMoreImg.addEventListener("mouseleave", (e) => {
-        e.target.style.height = "auto";
-    });
+  const imgFun = document.querySelector('.fun-img');
+  imgFun.addEventListener('dblclick', (event) => {
+      document.title += ` ${event.detail}! ${event.detail} Click-click!`;
+      event.stopPropagation();
+  });
 
   //Adding a boder 
  let button = document.querySelectorAll(".btn");
@@ -82,5 +87,5 @@ e.target.style.border = '2px solid pink';
     e.target.style.backgroundColor = 'aquamarine';
  });
   
-
+ //anything.style.transform = “rotate(90deg)”;
 
